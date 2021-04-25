@@ -127,6 +127,9 @@ class Calculator(QFrame):
     def check(self):
         if self.lineEdit.text()[-1] in self.numbers:
             return False
+        elif self.lineEdit.text()[-1] in self.operators and self.lineEdit.text()[-2] in self.operators:
+            self.lineEdit.backspace()
+            return True
         else:
             return True
 
