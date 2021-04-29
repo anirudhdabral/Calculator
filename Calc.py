@@ -87,7 +87,7 @@ class Calculator(QFrame):
             msg.setStandardButtons(QMessageBox.Ok)
             msg.exec_()
             return
-        except SyntaxError or TypeError:
+        except (SyntaxError, TypeError):
             self.txtResult.clear()
             self.lineEdit.clear()
             return
@@ -116,7 +116,7 @@ class Calculator(QFrame):
                 msg.setStandardButtons(QMessageBox.Ok)
                 msg.exec_()
                 return
-            except SyntaxError or TypeError:
+            except (SyntaxError, TypeError):
                 self.txtResult.clear()
                 self.lineEdit.clear()
                 return
